@@ -8,8 +8,9 @@
   })
 </script>
 
-<main>
+<main class="bg-red-500">
   Hello World {id}
+
 </main>
 
 <style>
