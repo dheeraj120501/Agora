@@ -19,6 +19,16 @@ const io = new Server(httpServer, {
 io.on("connection", (socket) => {
   console.log("connection estd.", socket.id);
 
+  socket.on("create_room", () => {
+    const id = 123;
+    console.log("Creating room with room id:", id);
+    socket.emit("room_created", id);
+  });
+
+  socket.on("join_room", (id) => {
+    console.log("Joining room with id:", id);
+  });
+
   socket.on("disconnect", (reason, desc) =>
     console.log("disconnected", reason, desc)
   );
